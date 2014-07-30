@@ -7,21 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div id="bg"></div>
-        <div class="container">
-            <div class="row">
 
-                <script type="text/html" id="quoteTemplate">
-                <h1><%=data[0].quote%></h1>
-                </script>
+        <script type="text/html" id="quoteTemplate">
+        <h1 class="quote-heading"><%=data[0].quote%></h1>
+        <div class="dim"></div>
+        </script>
 
-                <div class="col-lg-12" id="content"></div>
-                
-            </div>
-        </div>
+        <div id="content"></div>
+
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
