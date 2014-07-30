@@ -13,7 +13,16 @@
 		"quote": "Remember Alf Bart? He's back, in Pog form.",
 		"season": "",
 		"episode": "",
-		"bg-img": "pog-1.png",
+		"bg-img": "pog-2.png",
+		"bg-pos": "",
+		"context": ""
+	},
+	"quote-3": {
+		"characters": ["ralph"],
+		"quote": "Now you know what you have to do. Burn the house down. Burn 'em all!",
+		"season": "9",
+		"episode": "",
+		"bg-img": "burn-1.png",
 		"bg-pos": "",
 		"context": ""
 	}

@@ -6,8 +6,11 @@ $.getJSON( "data.json", function(data) {
 		items.push(val);
 	});
 
+	length = items.length
+	currentItem = Math.floor(Math.random() * length)
+
 	var template = $('#quoteTemplate').html();
 	$('#content').html(_.template(template, {data:items}));
-	$('#content').css('background-image','url(img/' + items[0]["bg-img"] + ')')
+	$('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
 
 });
