@@ -25,5 +25,14 @@
 		"bg-img": "burn-1.png",
 		"bg-pos": "",
 		"context": ""
+	},
+	"quote-4": {
+		"characters": ["frink"],
+		"quote": "No, a pawn can't move that way, ya stupid arm!",
+		"season": "8",
+		"episode": "",
+		"bg-img": "frink-1.png",
+		"bg-pos": "",
+		"context": ""
 	}
 }
