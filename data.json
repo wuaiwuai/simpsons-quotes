@@ -1,9 +1,27 @@
 {
+	/*
+	 * ==========================================
+	 * Example JSON Block
+	 * ==========================================
+	 *
+	 * "quote-99": {
+	 * 	"characters": ["milhouse", "bart"],
+	 * 	"quote": "Remember Alf Bart? He's back, in Pog form.",
+	 * 	"season": "",
+	 * 	"episode-title": "",
+	 * 	"episode-number": "",
+	 * 	"bg-img": "pog-1.png",
+	 * 	"bg-pos": "",
+	 * 	"context": ""
+	 * },
+	 *
+	 */
 	"quote-1": {
 		"characters": ["milhouse", "bart"],
 		"quote": "Remember Alf Bart? He's back, in Pog form.",
 		"season": "",
-		"episode": "",
+		"episode-title": "",
+		"episode-number": "",
 		"bg-img": "pog-1.png",
 		"bg-pos": "",
 		"context": ""
@@ -12,7 +30,8 @@
 		"characters": ["milhouse", "bart"],
 		"quote": "Remember Alf Bart? He's back, in Pog form.",
 		"season": "",
-		"episode": "",
+		"episode-title": "",
+		"episode-number": "",
 		"bg-img": "pog-1.png",
 		"bg-pos": "",
 		"context": ""
