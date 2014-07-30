@@ -1,0 +1,23 @@
+{
+  "name": "simpsons-quotes",
+  "version": "0.0.0",
+  "homepage": "https://github.com/wuaiwuai/simpsons-quotes",
+  "authors": [
+    "John Willard <jgwil2@gmail.com>",
+    "Jon Dang <jondang@gmail.com>"
+  ],
+  "description": "Simpsons quote randomizer",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "bootstrap":"latest",
+      "jquery": "latest"
+  }
+}
