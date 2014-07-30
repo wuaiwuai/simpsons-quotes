@@ -1,5 +1,14 @@
 {
-	"data": {
+	"quote-1": {
+		"characters": ["milhouse", "bart"],
+		"quote": "Remember Alf Bart? He's back, in Pog form.",
+		"season": "",
+		"episode": "",
+		"bg-img": "pog-1.png",
+		"bg-pos": "",
+		"context": ""
+	},
+	"quote-2": {
 		"characters": ["milhouse", "bart"],
 		"quote": "Remember Alf Bart? He's back, in Pog form.",
 		"season": "",
