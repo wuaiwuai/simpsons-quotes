@@ -6,8 +6,7 @@ $.getJSON( "data.json", function(data) {
 		items.push(val);
 	});
 
-	var length = items.length
-	var currentItem = Math.floor(Math.random() * length)
+	var currentItem = Math.floor(Math.random() * items.length)
 
 	var template = $('#quoteTemplate').html();
 	$('#content').html(_.template(template, {data: items[currentItem]}));
