@@ -12,4 +12,11 @@ $.getJSON( "data.json", function(data) {
 	$('#content').html(_.template(template, {data:items[currentItem]}));
 	$('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
 
+	triggerQuote()
 });
+
+function triggerQuote() {
+	setTimeout(function() {
+		$('.quote-heading').fadeIn(200).addClass("animation-target")	
+	}, 800)
+}

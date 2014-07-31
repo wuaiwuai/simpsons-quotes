@@ -13,8 +13,9 @@
     <body>
 
         <script type="text/html" id="quoteTemplate">
-        <h1 class="quote-heading"><%=data.quote%></h1>
-        <div class="dim"></div>
+        <% if ((data.quote).length > 0) { %>
+        <h1 class="quote-heading">"<%=data.quote%>"</h1>
+        <% } %>
         </script>
 
         <div id="content"></div>

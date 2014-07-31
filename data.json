@@ -3,27 +3,55 @@
 		"characters": ["milhouse", "bart"],
 		"quote": "Remember Alf Bart? He's back, in Pog form.",
 		"season": "",
-		"episode": "",
+		"episode-title": "",
+		"episode-number": "",
 		"bg-img": "pog-1.png",
 		"bg-pos": "",
-		"context": ""
+		"context": "",
+		"link": ""
 	},
 	"quote-2": {
-		"characters": ["milhouse", "bart"],
-		"quote": "Remember Alf Bart? He's back, in Pog form.",
-		"season": "",
-		"episode": "",
-		"bg-img": "pog-2.png",
-		"bg-pos": "",
-		"context": ""
-	},
-	"quote-3": {
 		"characters": ["ralph"],
 		"quote": "Now you know what you have to do. Burn the house down. Burn 'em all!",
 		"season": "9",
-		"episode": "",
+		"episode-title": "",
+		"episode-number": "",
 		"bg-img": "burn-1.png",
 		"bg-pos": "",
-		"context": ""
+		"context": "",
+		"link": ""
+	},
+	"quote-3": {
+		"characters": ["homer", "maggie"],
+		"quote": "Don't forget. You're here forever.",
+		"season": "",
+		"episode-title": "",
+		"episode-number": "",
+		"bg-img": "doit-1.jpg",
+		"bg-pos": "",
+		"context": "",
+		"link": ""
+	},
+	"quote-4": {
+		"characters": ["homer", "hank scorpio"],
+		"quote": "I didn't even give you my coat!",
+		"season": "",
+		"episode-title": "",
+		"episode-number": "",
+		"bg-img": "coat-1.jpg",
+		"bg-pos": "",
+		"context": "",
+		"link": ""
+	},
+	"quote-5": {
+		"characters": ["homer","mother simpson"],
+		"quote": "",
+		"season": "7",
+		"episode-title": "Mother Simpson",
+		"episode-number": "8",
+		"bg-img": "mothersimpson-1.jpg",
+		"bg-pos": "",
+		"context": "",
+		"link": "https://www.youtube.com/watch?v=phE8HifoQ-8"
 	}
 }
