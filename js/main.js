@@ -13,11 +13,10 @@ $.getJSON( "data.json", function(data) {
 	$('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
 
 	triggerQuote()
-
 });
 
 function triggerQuote() {
 	setTimeout(function() {
 		$('.quote-heading').fadeIn(200).addClass("animation-target")	
-	}, 600)
+	}, 800)
 }
