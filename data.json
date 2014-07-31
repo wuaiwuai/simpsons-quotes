@@ -152,5 +152,16 @@
 		"bg-pos": "",
 		"context": "",
 		"link": ""
+	},
+	"quote-15": {
+		"characters": ["bart", "comic book guy"],
+		"quote": "Oh your powers of deduction are exceptional! I simply can't allow you to waste them here when there are so many crimes going unsolved at this very moment.",
+		"season": "7",
+		"episode-title": "The Day the Violence Died",
+		"episode-number": "18",
+		"bg-img": "comic-1.png",
+		"bg-pos": "",
+		"context": "",
+		"link": ""
 	}
 }
