@@ -53,5 +53,16 @@
 		"bg-pos": "",
 		"context": "",
 		"link": "https://www.youtube.com/watch?v=phE8HifoQ-8"
+	},
+	"quote-6": {
+		"characters": ["professor frink"],
+		"quote": "No, pawns can't move that way, ya stupid arm!",
+		"season": "7",
+		"episode-title": "Mother Simpson",
+		"episode-number": "8",
+		"bg-img": "frink-1.png",
+		"bg-pos": "",
+		"context": "",
+		"link": "https://www.youtube.com/watch?v=phE8HifoQ-8"
 	}
 }
