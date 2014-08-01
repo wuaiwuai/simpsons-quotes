@@ -30,7 +30,7 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 		}
 
 		// console.log(entryObj)
-		// ["milhouse, bart", "Remember Alf Bar? He's back, in Pog form.", "", "", "", "pog-1.png", "", "", ""] 
+		// Object {characters: "milhouse, bart", quote: "Remember Alf Bar? He's back, in Pog form.", season: "7", ep-title: "Bart Sells his Soul", ep-num: "4"…}
 
 		// push objects created into an array
 		items.push(entryObj);

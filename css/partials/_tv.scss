@@ -1,0 +1,90 @@
+
+/* Colors */
+$tv-color-base: #605489;
+$tv-color-box: #2f3858;
+$tv-color-wires: #242768;
+
+/* TV Variables */
+$size: 300px;
+$rect: 0.75;
+
+@-moz-keyframes spin { 100% { -moz-transform:  rotateX(-15deg) rotateY(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(360deg); } }
+@keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(360deg); transform: rotateX(-15deg) rotateY(360deg); } }
+
+#tv-scene {
+	margin: 0 auto;
+	margin-top: 10%;
+	width: $size;
+	height: $size;
+	perspective: 2000px;
+	// background-color: brown;
+}
+
+#tv {
+	background-color: blue;
+	height: $size*$rect;
+	width: $size;
+	display: block;
+	transform-style: preserve-3d;
+	transform: rotateX(-15deg) rotateY(0deg);
+
+	-webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
+}
+.tv-side {
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	// background: red;
+	// opacity: 0.35;
+	background-color: $tv-color-base;
+}
+.tv-side.front {
+	// background: yellow;
+	transform: translate3d(0, 0, $size/2);
+	background-image: url('http://4.bp.blogspot.com/-LOyIHTCWvNQ/Te5YL1X0qFI/AAAAAAAAIL4/WizHOGLczmc/s1600/10-best-background-movie-desktop-wallpapers-the-simpsons.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: $size*$rect;
+	&:after {
+		content: "";
+		display: block;
+		height: inherit;
+		width: inherit;
+		box-sizing: border-box;
+		border: 10px solid $tv-color-base;
+	}
+}
+.tv-side.back {
+	// background: orange;
+	transform: rotateY(180deg) translate3d(0, 0, $size/2);
+	height: $size*$rect;
+	background-color: darken($tv-color-base, 10%);
+}
+.tv-side.left {
+	// background: green;
+	transform: rotateY(-90deg) translate3d(0, 0, $size/2);
+	height: $size*$rect;
+}
+.tv-side.right {
+	// background: magenta;
+	transform: rotateY(90deg) translate3d(0, 0, $size/2);
+	height: $size*$rect;
+}
+.tv-side.top {
+	// background: cyan;
+	transform: rotateX(90deg) translate3d(0, 0, ($size/2));
+	height: $size;
+}
+.tv-side.bottom {
+	// background: red;
+	transform: rotateX(-90deg) translate3d(0, 0, ($size/2)*0.5);
+	height: $size;
+}
+

@@ -37,6 +37,10 @@ html, body {
   height: 100%;
 }
 
+body {
+  background-color: #222;
+}
+
 #content {
   height: 100%;
   width: 100%;
@@ -448,4 +452,94 @@ html, body {
     -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+}
+/* Colors */
+/* TV Variables */
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotateX(-15deg) rotateY(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotateX(-15deg) rotateY(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotateX(-15deg) rotateY(360deg);
+    transform: rotateX(-15deg) rotateY(360deg);
+  }
+}
+#tv-scene {
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 300px;
+  height: 300px;
+  perspective: 2000px;
+}
+
+#tv {
+  background-color: blue;
+  height: 225px;
+  width: 300px;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(0deg);
+  -webkit-animation: spin 8s linear infinite;
+  -moz-animation: spin 8s linear infinite;
+  animation: spin 8s linear infinite;
+}
+
+.tv-side {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  background-color: #605489;
+}
+
+.tv-side.front {
+  transform: translate3d(0, 0, 150px);
+  background-image: url("http://4.bp.blogspot.com/-LOyIHTCWvNQ/Te5YL1X0qFI/AAAAAAAAIL4/WizHOGLczmc/s1600/10-best-background-movie-desktop-wallpapers-the-simpsons.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 225px;
+}
+.tv-side.front:after {
+  content: "";
+  display: block;
+  height: inherit;
+  width: inherit;
+  box-sizing: border-box;
+  border: 10px solid #605489;
+}
+
+.tv-side.back {
+  transform: rotateY(180deg) translate3d(0, 0, 150px);
+  height: 225px;
+  background-color: #4a4169;
+}
+
+.tv-side.left {
+  transform: rotateY(-90deg) translate3d(0, 0, 150px);
+  height: 225px;
+}
+
+.tv-side.right {
+  transform: rotateY(90deg) translate3d(0, 0, 150px);
+  height: 225px;
+}
+
+.tv-side.top {
+  transform: rotateX(90deg) translate3d(0, 0, 150px);
+  height: 300px;
+}
+
+.tv-side.bottom {
+  transform: rotateX(-90deg) translate3d(0, 0, 75px);
+  height: 300px;
 }
