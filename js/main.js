@@ -37,7 +37,8 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 
 	});
 
-	console.log(items)
+	// list of items
+	// console.log(items)
 
 	var currentItem = Math.floor(Math.random() * items.length)
 
