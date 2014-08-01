@@ -1,10 +1,44 @@
 
-$.getJSON( "data.json", function(data) {
+$.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLlJ3t7vLH-yQUE5GlE84/od6/public/values?alt=json', function(data) {
 
 	var items = [];
-	$.each(data, function(key,val) {
-		items.push(val);
+
+	// entire feed list
+	// console.log(data.feed.entry)
+
+	// create an array of objects to be used in the template
+	$.each(data.feed.entry, function(i,val) {
+
+		var entryObj = {};
+
+		// loop through the attributes of each entry
+		for (var key in val) {
+
+			// get key values where keys begin with gsx (the data we need)
+			if (key.substring(0,3) === "gsx") {
+
+				// take only the value of that attribute (cuz each value is an object ie. $t: stuff)
+				for (k in val[key]) {
+
+					// push those attribute values into an obj key/val pair
+					entryObj[key.substring(4)] = val[key][k]
+
+				}
+
+			}
+
+		}
+
+		// console.log(entryObj)
+		// ["milhouse, bart", "Remember Alf Bar? He's back, in Pog form.", "", "", "", "pog-1.png", "", "", ""] 
+
+		// push objects created into an array
+		items.push(entryObj);
+
 	});
+
+	// list of items
+	// console.log(items)
 
 	var currentItem = Math.floor(Math.random() * items.length)
 
@@ -13,6 +47,7 @@ $.getJSON( "data.json", function(data) {
 	$('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
 
 	triggerQuote()
+
 });
 
 function triggerQuote() {
