@@ -44,9 +44,11 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 
 	var template = $('#quoteTemplate').html();
 	$('#content').html(_.template(template, {data:items[currentItem]}));
-	$('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
+	// $('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
+	$('#tv .screen').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
 
-	triggerQuote()
+	// triggerQuote()
+	// triggerTv()
 
 });
 
@@ -54,4 +56,10 @@ function triggerQuote() {
 	setTimeout(function() {
 		$('.quote-heading').fadeIn(200).addClass("animation-target")	
 	}, 800)
+}
+
+function triggerTv() {
+	// setTimeout(function() {
+		$('#tv-scene').addClass("tv-anim")	
+	// }, 800)
 }
