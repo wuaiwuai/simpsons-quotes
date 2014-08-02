@@ -485,6 +485,7 @@ body {
   width: 300px;
   display: block;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   position: relative;
   transform: rotateX(-15deg) rotateY(0deg);
   -webkit-animation: spin 4s linear infinite;
@@ -520,7 +521,27 @@ body {
   border-radius: 4px;
 }
 
+.tv-side.front {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  background: #786ba5;
+  transform: translate3d(0, 0, 105px);
+  height: 210px;
+}
+.tv-side.front:after {
+  content: "";
+  display: block;
+  height: inherit;
+  width: inherit;
+}
+
 .tv-side .dial {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+.tv-side .dial .dial-layer {
+  -webkit-backface-visibility: hidden;
   position: absolute;
   top: 30px;
   right: 12px;
@@ -529,29 +550,58 @@ body {
   height: 24px;
   box-sizing: border-box;
   border: 2px solid #1e1a2a;
-  transform: rotate(45deg);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
-.tv-side .dial:after {
-  content: "";
+.tv-side .dial .dial-layer:nth-child(1) {
+  transform: translate3d(0, 0, 2px);
+}
+.tv-side .dial .dial-layer:nth-child(2) {
+  transform: translate3d(0, 0, 2px);
+}
+.tv-side .dial .dial-layer:nth-child(3) {
+  transform: translate3d(0, 0, 4px);
+}
+.tv-side .dial .dial-layer:nth-child(4) {
+  transform: translate3d(0, 0, 6px);
+}
+.tv-side .dial .dial-layer:nth-child(5) {
+  transform: translate3d(0, 0, 8px);
+}
+.tv-side .dial .nub {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotate(45deg) translate3d(0, 0, 10px);
+}
+.tv-side .dial .nub .nub-layer {
+  position: absolute;
+  top: 1px;
   right: 0;
-  margin-right: auto;
+  left: 0;
   margin-left: auto;
-  height: 20px;
-  width: 8px;
-  box-sizing: border-box;
+  margin-right: auto;
   background-color: #2f3858;
-  border-left: 2px solid #1e1a2a;
-  border-right: 2px solid #1e1a2a;
+  width: 6px;
+  height: 22px;
+  border: 1px solid #1e1a2a;
+}
+.tv-side .dial .nub .nub-layer:nth-child(2) {
+  transform: translate3d(0, 0, 1px);
+}
+.tv-side .dial .nub .nub-layer:nth-child(3) {
+  transform: translate3d(0, 0, 2px);
 }
 .tv-side .dial:nth-child(2) {
-  top: 66px;
-  transform: rotate(-15deg);
+  top: 36px;
+}
+.tv-side .dial:nth-child(2) .nub {
+  transform: rotate(-15deg) translate3d(0, 0, 10px);
 }
 
 .tv-side .panel {
@@ -563,18 +613,6 @@ body {
   height: 56px;
   box-sizing: border-box;
   border: 2px solid #1e1a2a;
-}
-
-.tv-side.front {
-  background: #786ba5;
-  transform: translate3d(0, 0, 105px);
-  height: 210px;
-}
-.tv-side.front:after {
-  content: "";
-  display: block;
-  height: inherit;
-  width: inherit;
 }
 
 .tv-side.back {
