@@ -457,18 +457,18 @@ body {
 /* TV Variables */
 @-moz-keyframes spin {
   100% {
-    -moz-transform: rotateX(-15deg) rotateY(360deg);
+    -moz-transform: rotateX(-15deg) rotateY(60deg);
   }
 }
 @-webkit-keyframes spin {
   100% {
-    -webkit-transform: rotateX(-15deg) rotateY(360deg);
+    -webkit-transform: rotateX(-15deg) rotateY(60deg);
   }
 }
 @keyframes spin {
   100% {
-    -webkit-transform: rotateX(-15deg) rotateY(360deg);
-    transform: rotateX(-15deg) rotateY(360deg);
+    -webkit-transform: rotateX(-15deg) rotateY(60deg);
+    transform: rotateX(-15deg) rotateY(60deg);
   }
 }
 #tv-scene {
@@ -481,14 +481,15 @@ body {
 
 #tv {
   background-color: blue;
-  height: 225px;
+  height: 210px;
   width: 300px;
   display: block;
   transform-style: preserve-3d;
+  position: relative;
   transform: rotateX(-15deg) rotateY(0deg);
-  -webkit-animation: spin 8s linear infinite;
-  -moz-animation: spin 8s linear infinite;
-  animation: spin 8s linear infinite;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
 }
 
 .tv-side {
@@ -496,50 +497,108 @@ body {
   height: inherit;
   position: absolute;
   background-color: #605489;
+  box-sizing: border-box;
+  border: 2px solid #1e1a2a;
 }
 
-.tv-side.front {
-  transform: translate3d(0, 0, 150px);
-  background-image: url("http://4.bp.blogspot.com/-LOyIHTCWvNQ/Te5YL1X0qFI/AAAAAAAAIL4/WizHOGLczmc/s1600/10-best-background-movie-desktop-wallpapers-the-simpsons.jpg");
+.tv-side.screen {
+  background: yellow;
+  transform: translate3d(0, 0, 106px);
+  background-image: url("../img/default.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 225px;
+  height: 170px;
+  width: 230px;
+  top: 20px;
+  left: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.tv-side .dial {
+  position: absolute;
+  top: 30px;
+  right: 12px;
+  background-color: #2f3858;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border: 2px solid #1e1a2a;
+  transform: rotate(45deg);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.tv-side .dial:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  height: 20px;
+  width: 8px;
+  box-sizing: border-box;
+  background-color: #2f3858;
+  border-left: 2px solid #1e1a2a;
+  border-right: 2px solid #1e1a2a;
+}
+.tv-side .dial:nth-child(2) {
+  top: 66px;
+  transform: rotate(-15deg);
+}
+
+.tv-side .panel {
+  position: absolute;
+  top: 106px;
+  right: 12px;
+  background-color: #2f3858;
+  width: 24px;
+  height: 56px;
+  box-sizing: border-box;
+  border: 2px solid #1e1a2a;
+}
+
+.tv-side.front {
+  background: #786ba5;
+  transform: translate3d(0, 0, 105px);
+  height: 210px;
 }
 .tv-side.front:after {
   content: "";
   display: block;
   height: inherit;
   width: inherit;
-  box-sizing: border-box;
-  border: 10px solid #605489;
 }
 
 .tv-side.back {
-  transform: rotateY(180deg) translate3d(0, 0, 150px);
-  height: 225px;
+  transform: rotateY(180deg) translate3d(0, 0, 105px);
+  height: 210px;
   background-color: #4a4169;
 }
 
 .tv-side.left {
-  transform: rotateY(-90deg) translate3d(0, 0, 150px);
-  height: 225px;
+  transform: rotateY(-90deg) translate3d(0, 0, 105px);
+  height: 210px;
+  width: 210px;
 }
 
 .tv-side.right {
-  transform: rotateY(90deg) translate3d(0, 0, 150px);
-  height: 225px;
+  transform: rotateY(90deg) translate3d(0, 0, 195px);
+  height: 210px;
+  width: 210px;
 }
 
 .tv-side.top {
-  transform: rotateX(90deg) translate3d(0, 0, 150px);
-  height: 300px;
+  transform: rotateX(90deg) translate3d(0, 0, 105px);
 }
 
 .tv-side.bottom {
-  transform: rotateX(-90deg) translate3d(0, 0, 75px);
-  height: 300px;
+  transform: rotateX(-90deg) translate3d(0, 0, 105px);
 }
