@@ -46,7 +46,7 @@ $outline: darken($tv-color-base, 35%);
 	
 	// @include vendor-prefix(transform, rotateX(-15deg) rotateY(15deg));
 	
-	@include vendor-prefix(transform, rotateX(-15deg) rotateY(20deg));
+	@include vendor-prefix(transform, rotateX(-15deg) rotateY(-60deg));
 	@include vendor-prefix(animation, spin 4s linear infinite);
 }
 .tv-side {
@@ -59,7 +59,7 @@ $outline: darken($tv-color-base, 35%);
 	box-sizing: border-box;
 	border: 2px solid $outline;
 }
-$line-rotation: 40deg;
+$line-rotation: 50deg;
 .tv-side.screen-rim {
 	position: absolute;
 	background-color: $tv-color-rim;
