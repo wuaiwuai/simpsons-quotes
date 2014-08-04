@@ -10,6 +10,15 @@ $rect: 0.7;
 $tv-frame: 20px;
 $outline: darken($tv-color-base, 30%);
 
+/* Mixins */
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
 @-moz-keyframes spin { 100% { -moz-transform:  rotateX(-15deg) rotateY(30deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(30deg); } }
 @keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(30deg); transform: rotateX(-15deg) rotateY(30deg); } }
@@ -19,12 +28,10 @@ $outline: darken($tv-color-base, 30%);
 	padding-top: 12%;
 	width: $size;
 	height: $size;
-	perspective: 2000px;
+	@include vendor-prefix(perspective, 2000px);
 	// background-color: brown;
 
-	// -ms-transform: scale(2);
-	// -webkit-transform: scale(2);
-	// transform: scale(2);
+	@include vendor-prefix(transform, scale(1.5));
 }
 
 #tv {
@@ -32,16 +39,13 @@ $outline: darken($tv-color-base, 30%);
 	height: $size*$rect;
 	width: $size;
 	display: block;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
 	position: relative;
+	@include vendor-prefix(transform-style, preserve-3d);
 	
-	// transform: rotateX(-15deg) rotateY(15deg);
+	// @include vendor-prefix(transform, rotateX(-15deg) rotateY(15deg));
 	
-	transform: rotateX(-15deg) rotateY(0deg);
-	-webkit-animation:spin 4s linear infinite;
-	-moz-animation:spin 4s linear infinite;
-	animation:spin 4s linear infinite;
+	@include vendor-prefix(transform, rotateX(-15deg) rotateY(0deg));
+	@include vendor-prefix(animation, spin 4s linear infinite);
 }
 .tv-side {
 	width: inherit;
@@ -55,7 +59,7 @@ $outline: darken($tv-color-base, 30%);
 }
 .tv-side.screen {
 	background: #0a0a0a;
-	transform: translate3d(0, 0, ($size*$rect/2)+1);
+	@include vendor-prefix(transform, translate3d(0, 0, ($size*$rect/2)+1));
 	// background-image: url('../img/default.png');
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -71,11 +75,10 @@ $outline: darken($tv-color-base, 30%);
 }
 .tv-side.front {
 	// background: yellow;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
 	background: lighten($tv-color-base, 10%);
-	transform: translate3d(0, 0, $size*$rect/2);
 	height: $size*$rect;
+	@include vendor-prefix(transform-style, preserve-3d);
+	@include vendor-prefix(transform, translate3d(0, 0, $size*$rect/2));
 	&:after {
 		content: "";
 		display: block;
@@ -85,8 +88,7 @@ $outline: darken($tv-color-base, 30%);
 }
 .tv-side .dial {
 	position: relative;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
+	@include vendor-prefix(transform-style, preserve-3d);
 	.dial-layer {
 		-webkit-backface-visibility: hidden;
 		position: absolute;
@@ -99,19 +101,19 @@ $outline: darken($tv-color-base, 30%);
 		border: 2px solid $outline;
 		@include border-radius(20px);
 		&:nth-child(1) {
-			transform: translate3d(0, 0, 2px); // bump first layer to handle chrome flicker
+			@include vendor-prefix(transform, translate3d(0, 0, 2px)) // bump first layer to handle chrome flicker
 		}
 		&:nth-child(2) {
-			transform: translate3d(0, 0, 2px);
+			@include vendor-prefix(transform, translate3d(0, 0, 2px))
 		}
 		&:nth-child(3) {
-			transform: translate3d(0, 0, 4px);
+			@include vendor-prefix(transform, translate3d(0, 0, 4px))
 		}
 		&:nth-child(4) {
-			transform: translate3d(0, 0, 6px);
+			@include vendor-prefix(transform, translate3d(0, 0, 6px))
 		}
 		&:nth-child(5) {
-			transform: translate3d(0, 0, 8px);
+			@include vendor-prefix(transform, translate3d(0, 0, 8px))
 		}
 	}
 	.nub {
@@ -120,8 +122,7 @@ $outline: darken($tv-color-base, 30%);
 		right: 12px;
 		width: 24px;
 		height: 24px;
-		transform-style: preserve-3d;
-		-webkit-transform-style: preserve-3d;
+		@include vendor-prefix(transform-style, preserve-3d);
 		transform: rotate(45deg) translate3d(0, 0, 10px); // rotate this janks for animation
 		.nub-layer {
 			position: absolute;
@@ -135,17 +136,17 @@ $outline: darken($tv-color-base, 30%);
 			height: 22px;
 			border: 1px solid $outline;
 			&:nth-child(2) {
-				transform: translate3d(0, 0, 1px);
+				@include vendor-prefix(transform, translate3d(0, 0, 1px));
 			}
 			&:nth-child(3) {
-				transform: translate3d(0, 0, 2px);
+				@include vendor-prefix(transform, translate3d(0, 0, 2px));
 			}
 		}
 	}
 	&:nth-child(2) {
 		top: 36px;
 		.nub {
-			transform: rotate(-15deg) translate3d(0, 0, 10px); // rotate this janks for animation
+			@include vendor-prefix(transform, rotate(-15deg) translate3d(0, 0, 10px)); // rotate this janks for animation
 		}
 	}
 }
@@ -161,29 +162,29 @@ $outline: darken($tv-color-base, 30%);
 }
 .tv-side.back {
 	// background: orange;
-	transform: rotateY(180deg) translate3d(0, 0, $size*$rect/2);
 	height: $size*$rect;
 	background-color: darken($tv-color-base, 10%);
+	@include vendor-prefix(transform, rotateY(180deg) translate3d(0, 0, $size*$rect/2));
 }
 .tv-side.left {
 	// background: green;
-	transform: rotateY(-90deg) translate3d(0, 0, ($size*$rect/2));
 	height: $size*$rect;
 	width: $size*$rect;
+	@include vendor-prefix(transform, rotateY(-90deg) translate3d(0, 0, ($size*$rect/2)));
 }
 .tv-side.right {
 	// background: magenta;
-	transform: rotateY(90deg) translate3d(0, 0, ($size*$rect - 15px));
 	height: $size*$rect;
 	width: $size*$rect;
+	@include vendor-prefix(transform, rotateY(90deg) translate3d(0, 0, ($size*$rect - 15px)));
 }
 .tv-side.top {
 	// background: cyan;
-	transform: rotateX(90deg) translate3d(0, 0, ($size*$rect/2));
+	@include vendor-prefix(transform, rotateX(90deg) translate3d(0, 0, ($size*$rect/2)));
 }
 .tv-side.bottom {
 	// background: red;
-	transform: rotateX(-90deg) translate3d(0, 0, ($size*$rect/2));
+	@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, ($size*$rect/2)));
 }
 
 

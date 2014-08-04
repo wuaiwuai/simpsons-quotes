@@ -455,6 +455,7 @@ body {
 }
 /* Colors */
 /* TV Variables */
+/* Mixins */
 @-moz-keyframes spin {
   100% {
     -moz-transform: rotateX(-15deg) rotateY(30deg);
@@ -476,7 +477,16 @@ body {
   padding-top: 12%;
   width: 300px;
   height: 300px;
+  -webkit-perspective: 2000px;
+  -ms-perspective: 2000px;
+  -moz-perspective: 2000px;
+  -o-perspective: 2000px;
   perspective: 2000px;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 #tv {
@@ -484,12 +494,21 @@ body {
   height: 210px;
   width: 300px;
   display: block;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
   position: relative;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(-15deg) rotateY(0deg);
+  -ms-transform: rotateX(-15deg) rotateY(0deg);
+  -moz-transform: rotateX(-15deg) rotateY(0deg);
+  -o-transform: rotateX(-15deg) rotateY(0deg);
   transform: rotateX(-15deg) rotateY(0deg);
   -webkit-animation: spin 4s linear infinite;
+  -ms-animation: spin 4s linear infinite;
   -moz-animation: spin 4s linear infinite;
+  -o-animation: spin 4s linear infinite;
   animation: spin 4s linear infinite;
 }
 
@@ -504,6 +523,10 @@ body {
 
 .tv-side.screen {
   background: #0a0a0a;
+  -webkit-transform: translate3d(0, 0, 106px);
+  -ms-transform: translate3d(0, 0, 106px);
+  -moz-transform: translate3d(0, 0, 106px);
+  -o-transform: translate3d(0, 0, 106px);
   transform: translate3d(0, 0, 106px);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -521,11 +544,18 @@ body {
 }
 
 .tv-side.front {
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
   background: #786ba5;
-  transform: translate3d(0, 0, 105px);
   height: 210px;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 105px);
+  -ms-transform: translate3d(0, 0, 105px);
+  -moz-transform: translate3d(0, 0, 105px);
+  -o-transform: translate3d(0, 0, 105px);
+  transform: translate3d(0, 0, 105px);
 }
 .tv-side.front:after {
   content: "";
@@ -536,8 +566,11 @@ body {
 
 .tv-side .dial {
   position: relative;
-  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .tv-side .dial .dial-layer {
   -webkit-backface-visibility: hidden;
@@ -554,18 +587,38 @@ body {
   border-radius: 20px;
 }
 .tv-side .dial .dial-layer:nth-child(1) {
+  -webkit-transform: translate3d(0, 0, 2px);
+  -ms-transform: translate3d(0, 0, 2px);
+  -moz-transform: translate3d(0, 0, 2px);
+  -o-transform: translate3d(0, 0, 2px);
   transform: translate3d(0, 0, 2px);
 }
 .tv-side .dial .dial-layer:nth-child(2) {
+  -webkit-transform: translate3d(0, 0, 2px);
+  -ms-transform: translate3d(0, 0, 2px);
+  -moz-transform: translate3d(0, 0, 2px);
+  -o-transform: translate3d(0, 0, 2px);
   transform: translate3d(0, 0, 2px);
 }
 .tv-side .dial .dial-layer:nth-child(3) {
+  -webkit-transform: translate3d(0, 0, 4px);
+  -ms-transform: translate3d(0, 0, 4px);
+  -moz-transform: translate3d(0, 0, 4px);
+  -o-transform: translate3d(0, 0, 4px);
   transform: translate3d(0, 0, 4px);
 }
 .tv-side .dial .dial-layer:nth-child(4) {
+  -webkit-transform: translate3d(0, 0, 6px);
+  -ms-transform: translate3d(0, 0, 6px);
+  -moz-transform: translate3d(0, 0, 6px);
+  -o-transform: translate3d(0, 0, 6px);
   transform: translate3d(0, 0, 6px);
 }
 .tv-side .dial .dial-layer:nth-child(5) {
+  -webkit-transform: translate3d(0, 0, 8px);
+  -ms-transform: translate3d(0, 0, 8px);
+  -moz-transform: translate3d(0, 0, 8px);
+  -o-transform: translate3d(0, 0, 8px);
   transform: translate3d(0, 0, 8px);
 }
 .tv-side .dial .nub {
@@ -574,8 +627,11 @@ body {
   right: 12px;
   width: 24px;
   height: 24px;
-  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   transform: rotate(45deg) translate3d(0, 0, 10px);
 }
 .tv-side .dial .nub .nub-layer {
@@ -591,15 +647,27 @@ body {
   border: 1px solid #1e1a2a;
 }
 .tv-side .dial .nub .nub-layer:nth-child(2) {
+  -webkit-transform: translate3d(0, 0, 1px);
+  -ms-transform: translate3d(0, 0, 1px);
+  -moz-transform: translate3d(0, 0, 1px);
+  -o-transform: translate3d(0, 0, 1px);
   transform: translate3d(0, 0, 1px);
 }
 .tv-side .dial .nub .nub-layer:nth-child(3) {
+  -webkit-transform: translate3d(0, 0, 2px);
+  -ms-transform: translate3d(0, 0, 2px);
+  -moz-transform: translate3d(0, 0, 2px);
+  -o-transform: translate3d(0, 0, 2px);
   transform: translate3d(0, 0, 2px);
 }
 .tv-side .dial:nth-child(2) {
   top: 36px;
 }
 .tv-side .dial:nth-child(2) .nub {
+  -webkit-transform: rotate(-15deg) translate3d(0, 0, 10px);
+  -ms-transform: rotate(-15deg) translate3d(0, 0, 10px);
+  -moz-transform: rotate(-15deg) translate3d(0, 0, 10px);
+  -o-transform: rotate(-15deg) translate3d(0, 0, 10px);
   transform: rotate(-15deg) translate3d(0, 0, 10px);
 }
 
@@ -615,28 +683,48 @@ body {
 }
 
 .tv-side.back {
-  transform: rotateY(180deg) translate3d(0, 0, 105px);
   height: 210px;
   background-color: #4a4169;
+  -webkit-transform: rotateY(180deg) translate3d(0, 0, 105px);
+  -ms-transform: rotateY(180deg) translate3d(0, 0, 105px);
+  -moz-transform: rotateY(180deg) translate3d(0, 0, 105px);
+  -o-transform: rotateY(180deg) translate3d(0, 0, 105px);
+  transform: rotateY(180deg) translate3d(0, 0, 105px);
 }
 
 .tv-side.left {
-  transform: rotateY(-90deg) translate3d(0, 0, 105px);
   height: 210px;
   width: 210px;
+  -webkit-transform: rotateY(-90deg) translate3d(0, 0, 105px);
+  -ms-transform: rotateY(-90deg) translate3d(0, 0, 105px);
+  -moz-transform: rotateY(-90deg) translate3d(0, 0, 105px);
+  -o-transform: rotateY(-90deg) translate3d(0, 0, 105px);
+  transform: rotateY(-90deg) translate3d(0, 0, 105px);
 }
 
 .tv-side.right {
-  transform: rotateY(90deg) translate3d(0, 0, 195px);
   height: 210px;
   width: 210px;
+  -webkit-transform: rotateY(90deg) translate3d(0, 0, 195px);
+  -ms-transform: rotateY(90deg) translate3d(0, 0, 195px);
+  -moz-transform: rotateY(90deg) translate3d(0, 0, 195px);
+  -o-transform: rotateY(90deg) translate3d(0, 0, 195px);
+  transform: rotateY(90deg) translate3d(0, 0, 195px);
 }
 
 .tv-side.top {
+  -webkit-transform: rotateX(90deg) translate3d(0, 0, 105px);
+  -ms-transform: rotateX(90deg) translate3d(0, 0, 105px);
+  -moz-transform: rotateX(90deg) translate3d(0, 0, 105px);
+  -o-transform: rotateX(90deg) translate3d(0, 0, 105px);
   transform: rotateX(90deg) translate3d(0, 0, 105px);
 }
 
 .tv-side.bottom {
+  -webkit-transform: rotateX(-90deg) translate3d(0, 0, 105px);
+  -ms-transform: rotateX(-90deg) translate3d(0, 0, 105px);
+  -moz-transform: rotateX(-90deg) translate3d(0, 0, 105px);
+  -o-transform: rotateX(-90deg) translate3d(0, 0, 105px);
   transform: rotateX(-90deg) translate3d(0, 0, 105px);
 }
 
