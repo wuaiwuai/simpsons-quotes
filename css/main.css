@@ -670,6 +670,7 @@ body {
   border-radius: 20px;
 }
 .tv-side .dial .dial-layer:nth-child(1) {
+  background-color: #211931;
   -webkit-transform: translate3d(0, 0, 2px);
   -ms-transform: translate3d(0, 0, 2px);
   -moz-transform: translate3d(0, 0, 2px);
@@ -677,6 +678,7 @@ body {
   transform: translate3d(0, 0, 2px);
 }
 .tv-side .dial .dial-layer:nth-child(2) {
+  background-color: #211931;
   -webkit-transform: translate3d(0, 0, 2px);
   -ms-transform: translate3d(0, 0, 2px);
   -moz-transform: translate3d(0, 0, 2px);
@@ -684,6 +686,7 @@ body {
   transform: translate3d(0, 0, 2px);
 }
 .tv-side .dial .dial-layer:nth-child(3) {
+  background-color: #211931;
   -webkit-transform: translate3d(0, 0, 4px);
   -ms-transform: translate3d(0, 0, 4px);
   -moz-transform: translate3d(0, 0, 4px);
@@ -691,6 +694,7 @@ body {
   transform: translate3d(0, 0, 4px);
 }
 .tv-side .dial .dial-layer:nth-child(4) {
+  background-color: #211931;
   -webkit-transform: translate3d(0, 0, 6px);
   -ms-transform: translate3d(0, 0, 6px);
   -moz-transform: translate3d(0, 0, 6px);
@@ -893,6 +897,34 @@ body {
   -moz-transform: rotateX(-90deg) translate3d(0, 0, 0);
   -o-transform: rotateX(-90deg) translate3d(0, 0, 0);
   transform: rotateX(-90deg) translate3d(0, 0, 0);
+}
+.tv-side.cable-box .cable-box-side.front .cable-box-bar {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  margin-top: -5px;
+  background-color: #6e8ff1;
+  box-sizing: border-box;
+  border: 2px solid #211931;
+  height: 10px;
+  width: 60px;
+}
+.tv-side.cable-box .cable-box-side.front .cable-box-circle {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  margin-top: -5px;
+  background-color: #6e8ff1;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #211931;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.tv-side.cable-box .cable-box-side.front .cable-box-circle:nth-child(2) {
+  left: 120px;
 }
 .tv-side.cable-box .cable-box-side.back {
   position: absolute;
