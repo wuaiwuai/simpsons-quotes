@@ -19,9 +19,9 @@ $outline: darken($tv-color-base, 30%);
   #{$name}: #{$argument};
 }
 
-@-moz-keyframes spin { 100% { -moz-transform:  rotateX(-15deg) rotateY(30deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(30deg); } }
-@keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(30deg); transform: rotateX(-15deg) rotateY(30deg); } }
+@-moz-keyframes spin { 100% { -moz-transform:  rotateX(-30deg) rotateY(60deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform:  rotateX(-30deg) rotateY(60deg); } }
+@keyframes spin { 100% { -webkit-transform:  rotateX(-30deg) rotateY(60deg); transform: rotateX(-30deg) rotateY(60deg); } }
 
 #tv-scene {
 	margin: 0 auto;
@@ -31,7 +31,7 @@ $outline: darken($tv-color-base, 30%);
 	@include vendor-prefix(perspective, 2000px);
 	// background-color: brown;
 
-	@include vendor-prefix(transform, scale(1.5));
+	@include vendor-prefix(transform, scale(1.75));
 }
 
 #tv {
@@ -44,7 +44,7 @@ $outline: darken($tv-color-base, 30%);
 	
 	// @include vendor-prefix(transform, rotateX(-15deg) rotateY(15deg));
 	
-	@include vendor-prefix(transform, rotateX(-15deg) rotateY(0deg));
+	@include vendor-prefix(transform, rotateX(0deg) rotateY(20deg));
 	@include vendor-prefix(animation, spin 4s linear infinite);
 }
 .tv-side {
@@ -57,21 +57,37 @@ $outline: darken($tv-color-base, 30%);
 	box-sizing: border-box;
 	border: 2px solid $outline;
 }
-.tv-side.screen {
-	background: #0a0a0a;
-	@include vendor-prefix(transform, translate3d(0, 0, ($size*$rect/2)+1));
-	// background-image: url('../img/default.png');
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
+.tv-side.screen-rim {
+	background-color: $outline;
 	height: ($size*$rect) - ($tv-frame * 2);
 	width: $size - ($tv-frame * 3.5);
 	top: $tv-frame;
 	left: $tv-frame;
+
+	@include vendor-prefix(transform, translate3d(0, 0, ($size*$rect/2)+1));
 	@include border-radius(4px);
+	.screen {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		background: #0a0a0a;
+		// background-image: url('../img/default.png');
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+
+		width: 85%;
+		height: 85%;
+		margin: auto;
+		// background-color: red;
+		@include vendor-prefix(border-radius, #{100%}/#{25%});
+	}
 }
 .tv-side.front {
 	// background: yellow;
@@ -156,9 +172,18 @@ $outline: darken($tv-color-base, 30%);
 	right: 12px;
 	background-color: $tv-color-box;
 	width: 24px;
-	height: 56px;
+	height: 66px;
 	box-sizing: border-box;
 	border: 2px solid $outline;
+	text-align: center;
+	font-size: 0;
+	.panel-lines {
+		width: 1px;
+		height: 90%;
+		background-color: $outline;
+		display: inline-block;
+		margin: 15% 1px;
+	}
 }
 .tv-side.back {
 	// background: orange;
@@ -181,6 +206,69 @@ $outline: darken($tv-color-base, 30%);
 .tv-side.top {
 	// background: cyan;
 	@include vendor-prefix(transform, rotateX(90deg) translate3d(0, 0, ($size*$rect/2)));
+}
+$cable-box-height: 30px;
+.tv-side.cable-box {
+	// background: cyan;
+	position: absolute;
+	@include vendor-prefix(transform-style, preserve-3d);
+	@include vendor-prefix(transform, rotateX(90deg) translate3d(0, 0, ($size*$rect/2)));
+	.cable-box-side {
+		box-sizing: border-box;
+		border: 2px solid $outline;
+		background-color: $tv-color-box;
+		// opacity: 0.5;
+	}
+	.cable-box-side.top {
+		// background: red;
+		position: absolute;
+		left: 15%;
+		bottom: 10%;
+		height: ($size*$rect)/2;
+		width: ($size)/2;
+		@include vendor-prefix(transform, translate3d(0, 0, $cable-box-height));
+	}
+	.cable-box-side.left {
+		// background: orange;
+		position: absolute;
+		left: 15%;
+		bottom: 10%;
+		height: ($size*$rect)/2;
+		width: $cable-box-height;
+		@include vendor-prefix(transform-origin, 0% 0%);
+		@include vendor-prefix(transform, rotateY(-90deg) translate3d(0, 0, 0));
+	}
+	.cable-box-side.right {
+		// background: orange;
+		position: absolute;
+		left: 15%;
+		bottom: 10%;
+		height: ($size*$rect)/2;
+		width: $cable-box-height;
+		@include vendor-prefix(transform-origin, 0% 0%);
+		@include vendor-prefix(transform, rotateY(-90deg) translate3d(0, 0, -($size/2)));
+	}
+	.cable-box-side.front {
+		// background: orange;
+		background-color: lighten($tv-color-box, 10%);
+		position: absolute;
+		left: 15%;
+		bottom: 10%;
+		height: $cable-box-height;
+		width: ($size)/2;
+		@include vendor-prefix(transform-origin, 0% 100%);
+		@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, 0));
+	}
+	.cable-box-side.back {
+		// background: green;
+		position: absolute;
+		left: 15%;
+		bottom: 10%;
+		height: $cable-box-height;
+		width: ($size)/2;
+		@include vendor-prefix(transform-origin, 0% 100%);
+		@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, -($size*$rect/2)));
+	}
 }
 .tv-side.bottom {
 	// background: red;
