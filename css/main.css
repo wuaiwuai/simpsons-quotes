@@ -458,18 +458,18 @@ body {
 /* Mixins */
 @-moz-keyframes spin {
   100% {
-    -moz-transform: rotateX(-30deg) rotateY(60deg);
+    -moz-transform: rotateX(-15deg) rotateY(60deg);
   }
 }
 @-webkit-keyframes spin {
   100% {
-    -webkit-transform: rotateX(-30deg) rotateY(60deg);
+    -webkit-transform: rotateX(-15deg) rotateY(60deg);
   }
 }
 @keyframes spin {
   100% {
-    -webkit-transform: rotateX(-30deg) rotateY(60deg);
-    transform: rotateX(-30deg) rotateY(60deg);
+    -webkit-transform: rotateX(-15deg) rotateY(60deg);
+    transform: rotateX(-15deg) rotateY(60deg);
   }
 }
 #tv-scene {
@@ -500,11 +500,11 @@ body {
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform: rotateX(0deg) rotateY(20deg);
-  -ms-transform: rotateX(0deg) rotateY(20deg);
-  -moz-transform: rotateX(0deg) rotateY(20deg);
-  -o-transform: rotateX(0deg) rotateY(20deg);
-  transform: rotateX(0deg) rotateY(20deg);
+  -webkit-transform: rotateX(-15deg) rotateY(20deg);
+  -ms-transform: rotateX(-15deg) rotateY(20deg);
+  -moz-transform: rotateX(-15deg) rotateY(20deg);
+  -o-transform: rotateX(-15deg) rotateY(20deg);
+  transform: rotateX(-15deg) rotateY(20deg);
   -webkit-animation: spin 4s linear infinite;
   -ms-animation: spin 4s linear infinite;
   -moz-animation: spin 4s linear infinite;
@@ -516,17 +516,20 @@ body {
   width: inherit;
   height: inherit;
   position: absolute;
-  background-color: #605489;
+  background-color: #594485;
   box-sizing: border-box;
-  border: 2px solid #1e1a2a;
+  border: 2px solid #211931;
 }
 
 .tv-side.screen-rim {
-  background-color: #1e1a2a;
+  position: absolute;
+  background-color: #27255f;
   height: 170px;
   width: 230px;
   top: 20px;
   left: 20px;
+  border: 2px solid #211931;
+  overflow: hidden;
   -webkit-transform: translate3d(0, 0, 106px);
   -ms-transform: translate3d(0, 0, 106px);
   -moz-transform: translate3d(0, 0, 106px);
@@ -535,6 +538,69 @@ body {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+.tv-side.screen-rim .screen-rim-line {
+  position: absolute;
+  background-color: #211931;
+  border: none;
+  width: 2px;
+  height: 80px;
+}
+.tv-side.screen-rim .screen-rim-line:nth-child(1) {
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+}
+.tv-side.screen-rim .screen-rim-line:nth-child(2) {
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+.tv-side.screen-rim .screen-rim-line:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+.tv-side.screen-rim .screen-rim-line:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  transform: rotate(-40deg);
 }
 .tv-side.screen-rim .screen {
   position: absolute;
@@ -549,18 +615,19 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 85%;
-  height: 85%;
+  border: 2px solid #211931;
+  width: 90%;
+  height: 90%;
   margin: auto;
-  -webkit-border-radius: 100%/25%;
-  -ms-border-radius: 100%/25%;
-  -moz-border-radius: 100%/25%;
-  -o-border-radius: 100%/25%;
-  border-radius: 100%/25%;
+  -webkit-border-radius: 10%/10%;
+  -ms-border-radius: 10%/10%;
+  -moz-border-radius: 10%/10%;
+  -o-border-radius: 10%/10%;
+  border-radius: 10%/10%;
 }
 
 .tv-side.front {
-  background: #786ba5;
+  background-color: #7055a7;
   height: 210px;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -593,11 +660,11 @@ body {
   position: absolute;
   top: 30px;
   right: 12px;
-  background-color: #2f3858;
+  background-color: #526c8e;
   width: 24px;
   height: 24px;
   box-sizing: border-box;
-  border: 2px solid #1e1a2a;
+  border: 2px solid #211931;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
@@ -657,10 +724,10 @@ body {
   left: 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: #2f3858;
+  background-color: #6e8ff1;
   width: 6px;
   height: 22px;
-  border: 1px solid #1e1a2a;
+  border: 1px solid #211931;
 }
 .tv-side .dial .nub .nub-layer:nth-child(2) {
   -webkit-transform: translate3d(0, 0, 1px);
@@ -691,25 +758,25 @@ body {
   position: absolute;
   top: 106px;
   right: 12px;
-  background-color: #2f3858;
+  background-color: #6e8ff1;
   width: 24px;
   height: 66px;
   box-sizing: border-box;
-  border: 2px solid #1e1a2a;
+  border: 2px solid #211931;
   text-align: center;
   font-size: 0;
 }
 .tv-side .panel .panel-lines {
   width: 1px;
   height: 90%;
-  background-color: #1e1a2a;
+  background-color: #211931;
   display: inline-block;
-  margin: 15% 1px;
+  margin: 15% 2px;
 }
 
 .tv-side.back {
   height: 210px;
-  background-color: #4a4169;
+  background-color: #594485;
   -webkit-transform: rotateY(180deg) translate3d(0, 0, 105px);
   -ms-transform: rotateY(180deg) translate3d(0, 0, 105px);
   -moz-transform: rotateY(180deg) translate3d(0, 0, 105px);
@@ -760,8 +827,8 @@ body {
 }
 .tv-side.cable-box .cable-box-side {
   box-sizing: border-box;
-  border: 2px solid #1e1a2a;
-  background-color: #2f3858;
+  border: 2px solid #211931;
+  background-color: #2f3370;
 }
 .tv-side.cable-box .cable-box-side.top {
   position: absolute;
@@ -810,7 +877,7 @@ body {
   transform: rotateY(-90deg) translate3d(0, 0, -150px);
 }
 .tv-side.cable-box .cable-box-side.front {
-  background-color: #414d79;
+  background-color: #3e4494;
   position: absolute;
   left: 15%;
   bottom: 10%;
