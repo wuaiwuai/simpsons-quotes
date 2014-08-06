@@ -30,7 +30,7 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 		}
 
 		// console.log(entryObj)
-		// ["milhouse, bart", "Remember Alf Bar? He's back, in Pog form.", "", "", "", "pog-1.png", "", "", ""] 
+		// Object {characters: "milhouse, bart", quote: "Remember Alf Bar? He's back, in Pog form.", season: "7", ep-title: "Bart Sells his Soul", ep-num: "4"…}
 
 		// push objects created into an array
 		items.push(entryObj);
@@ -44,9 +44,11 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 
 	var template = $('#quoteTemplate').html();
 	$('#content').html(_.template(template, {data:items[currentItem]}));
-	$('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
+	// $('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
+	$('#tv .screen').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
 
-	triggerQuote()
+	// triggerQuote()
+	// triggerTv()
 
 });
 
@@ -54,4 +56,10 @@ function triggerQuote() {
 	setTimeout(function() {
 		$('.quote-heading').fadeIn(200).addClass("animation-target")	
 	}, 800)
+}
+
+function triggerTv() {
+	// setTimeout(function() {
+		$('#tv-scene').addClass("tv-anim")	
+	// }, 800)
 }
