@@ -21,19 +21,19 @@ $outline: darken($tv-color-base, 35%);
   #{$name}: #{$argument};
 }
 
-@-moz-keyframes spin { 100% { -moz-transform:  rotateX(-15deg) rotateY(60deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(60deg); } }
-@keyframes spin { 100% { -webkit-transform:  rotateX(-15deg) rotateY(60deg); transform: rotateX(-15deg) rotateY(60deg); } }
+@-moz-keyframes spin { 100% { -moz-transform:  rotateX(-5deg) rotateY(45deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform:  rotateX(-5deg) rotateY(45deg); } }
+@keyframes spin { 100% { -webkit-transform:  rotateX(-5deg) rotateY(45deg); transform: rotateX(-5deg) rotateY(45deg); } }
 
 #tv-scene {
 	margin: 0 auto;
-	padding-top: 12%;
+	padding-top: 20%;
 	width: $size;
 	height: $size;
 	@include vendor-prefix(perspective, 2000px);
 	// background-color: brown;
 
-	@include vendor-prefix(transform, scale(1.75));
+	// @include vendor-prefix(transform, scale(1.75));
 }
 
 #tv {
@@ -44,9 +44,9 @@ $outline: darken($tv-color-base, 35%);
 	position: relative;
 	@include vendor-prefix(transform-style, preserve-3d);
 	
-	// @include vendor-prefix(transform, rotateX(-15deg) rotateY(15deg));
+	// @include vendor-prefix(transform, rotateX(15deg) rotateY(15deg));
 	
-	@include vendor-prefix(transform, rotateX(-15deg) rotateY(-60deg));
+	@include vendor-prefix(transform, rotateX(-5deg) rotateY(-45deg));
 	@include vendor-prefix(animation, spin 4s linear infinite);
 }
 .tv-side {
@@ -219,6 +219,7 @@ $line-rotation: 50deg;
 	border: 2px solid $outline;
 	text-align: center;
 	font-size: 0;
+	@include vendor-prefix(transform, translate3d(0, 0, 1px));
 	.panel-lines {
 		width: 1px;
 		height: 90%;
@@ -256,6 +257,9 @@ $cable-box-height: 30px;
 	@include vendor-prefix(transform-style, preserve-3d);
 	@include vendor-prefix(transform, rotateX(90deg) translate3d(0, 0, ($size*$rect/2)));
 	.cable-box-side {
+		position: absolute;
+		left: 15%;
+		bottom: 10%;
 		box-sizing: border-box;
 		border: 2px solid $outline;
 		background-color: darken($tv-color-box, 10%);
@@ -263,18 +267,119 @@ $cable-box-height: 30px;
 	}
 	.cable-box-side.top {
 		// background: red;
-		position: absolute;
-		left: 15%;
-		bottom: 10%;
 		height: ($size*$rect)/2;
 		width: ($size)/2;
+		@include vendor-prefix(transform-style, preserve-3d);
 		@include vendor-prefix(transform, translate3d(0, 0, $cable-box-height));
+		.antenna {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			height: $cable-box-height*4;
+			width: 4px;
+			background-color: $outline;
+			@include vendor-prefix(transform-origin, 0% 100%);
+			&:after {
+					content: '';
+					width: 14px;
+					height: 14px;
+					background-color: $tv-color-parts;
+					border: 2px solid $outline;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					margin-left: -7px;
+					margin-top: -7px;
+					@include border-radius(20px);
+				}
+			&:nth-child(1) {
+				@include vendor-prefix(transform, rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -76px));
+			}
+			&:nth-child(2) {
+				@include vendor-prefix(transform, rotateX(-90deg) rotate(45deg) translate3d(0, -2px, -76px));
+			}
+		}
+		.antenna-base {
+			position: absolute;
+			left: 20%;
+			top: 20%;
+			box-sizing: border-box;
+			// border: 2px solid red;
+			height: $cable-box-height*2;
+			width: $cable-box-height*2;
+			@include vendor-prefix(transform-style, preserve-3d);
+			@include vendor-prefix(transform, translate3d(0, 0, 1px));
+		}
+		.antenna-sphere {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			overflow: hidden;
+			height: $cable-box-height;
+			width: $cable-box-height*2;
+			// background-color: darken($tv-color-box, 5%);
+			@include vendor-prefix(transform-origin, 0% 100%);
+			// the center
+			// @include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, #{$cable-box-height/2}));
+			@for $i from 1 through 15 {
+				&:nth-child(#{$i}) {
+					// border: 1px solid green;
+					@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, #{$cable-box-height/2 - $i*1}));
+					&:after {
+						content: '';
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						margin-left: auto;
+						margin-right: auto;
+						height: #{$i*2}px;
+						width: #{$i*4}px;
+						background-color: darken($tv-color-box, 5%);
+						-webkit-border-top-left-radius: $cable-box-height;
+						-webkit-border-top-right-radius: $cable-box-height;
+						-moz-border-radius-topleft: $cable-box-height;
+						-moz-border-radius-topright: $cable-box-height;
+						border-top-left-radius: $cable-box-height;
+						border-top-right-radius: $cable-box-height;
+					}
+				}
+			}
+			$count: 1;
+			@while $count < 16 {
+				&:nth-child(#{15+$count}) {
+					// border: 1px solid green;
+					@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, -#{$count*1}px));
+					&:after {
+						content: '';
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						margin-left: auto;
+						margin-right: auto;
+						height: #{30 - $count*2}px;
+						width: #{60 - $count*4}px;
+						background-color: darken($tv-color-box, 5%);
+						-webkit-border-top-left-radius: $cable-box-height;
+						-webkit-border-top-right-radius: $cable-box-height;
+						-moz-border-radius-topleft: $cable-box-height;
+						-moz-border-radius-topright: $cable-box-height;
+						border-top-left-radius: $cable-box-height;
+						border-top-right-radius: $cable-box-height;
+					}
+				}
+				$count: $count + 1;
+			}
+		}
 	}
 	.cable-box-side.left {
 		// background: orange;
-		position: absolute;
-		left: 15%;
-		bottom: 10%;
 		height: ($size*$rect)/2;
 		width: $cable-box-height;
 		@include vendor-prefix(transform-origin, 0% 0%);
@@ -282,9 +387,6 @@ $cable-box-height: 30px;
 	}
 	.cable-box-side.right {
 		// background: orange;
-		position: absolute;
-		left: 15%;
-		bottom: 10%;
 		height: ($size*$rect)/2;
 		width: $cable-box-height;
 		@include vendor-prefix(transform-origin, 0% 0%);
@@ -293,9 +395,6 @@ $cable-box-height: 30px;
 	.cable-box-side.front {
 		// background: orange;
 		background-color: $tv-color-box;
-		position: absolute;
-		left: 15%;
-		bottom: 10%;
 		height: $cable-box-height;
 		width: ($size)/2;
 		@include vendor-prefix(transform-origin, 0% 100%);
@@ -329,18 +428,73 @@ $cable-box-height: 30px;
 	}
 	.cable-box-side.back {
 		// background: green;
-		position: absolute;
-		left: 15%;
-		bottom: 10%;
 		height: $cable-box-height;
 		width: ($size)/2;
 		@include vendor-prefix(transform-origin, 0% 100%);
 		@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, -($size*$rect/2)));
 	}
 }
+$feet-width: 20px;
 .tv-side.bottom {
 	// background: red;
+	@include vendor-prefix(transform-style, preserve-3d);
 	@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, ($size*$rect/2)));
+	.tv-feet {
+		position: absolute;
+		// background-color: green;
+		height: $feet-width;
+		width: $feet-width;
+		@include vendor-prefix(transform-style, preserve-3d);
+		// @include vendor-prefix(transform, translate3d(0, 0, 1px));
+		.tv-feet-side {
+			position: absolute;
+			height: $feet-width;
+			width: $feet-width;
+			background-color: $tv-color-rim;
+			box-sizing: border-box;
+			border: 2px solid $outline;
+			&.front {
+				// background-color: green;
+				@include vendor-prefix(transform-origin, 100% 0%);
+				@include vendor-prefix(transform, rotateX(90deg) translate3d(0, 0, 0));
+			}
+			&.back {
+				// background-color: yellow;
+				@include vendor-prefix(transform-origin, 0% 100%);
+				@include vendor-prefix(transform, rotateX(-90deg) translate3d(0, 0, 0));
+			}
+			&.left {
+				// background-color: red;
+				@include vendor-prefix(transform-origin, 0% 100%);
+				@include vendor-prefix(transform, rotateY(-90deg) translate3d(0, 0, 0));
+			}
+			&.right {
+				// background-color: blue;
+				@include vendor-prefix(transform-origin, 100% 0%);
+				@include vendor-prefix(transform, rotateY(90deg) translate3d(0, 0, 0));
+			}
+			&.bottom {
+				// background-color: blue;
+				@include vendor-prefix(transform, translate3d(0, 0, $feet-width));
+			}
+		}
+		&:nth-child(1) {
+			left: 5%;
+			top: 5%;
+		}
+		&:nth-child(2) {
+			right: 5%;
+			top: 5%;
+		}
+		&:nth-child(3) {
+			left: 5%;
+			bottom: 5%;
+		}
+		&:nth-child(4) {
+			right: 5%;
+			bottom: 5%;
+		}
+	}
 }
 
 
