@@ -47,7 +47,7 @@ $outline: darken($tv-color-base, 35%);
 	// @include vendor-prefix(transform, rotateX(15deg) rotateY(15deg));
 	
 	@include vendor-prefix(transform, rotateX(-5deg) rotateY(-45deg));
-	@include vendor-prefix(animation, spin 4s linear infinite);
+	@include vendor-prefix(animation, spin 12s linear infinite);
 }
 .tv-side {
 	width: inherit;

@@ -412,11 +412,11 @@ body {
   -moz-transform: rotateX(-5deg) rotateY(-45deg);
   -o-transform: rotateX(-5deg) rotateY(-45deg);
   transform: rotateX(-5deg) rotateY(-45deg);
-  -webkit-animation: spin 4s linear infinite;
-  -ms-animation: spin 4s linear infinite;
-  -moz-animation: spin 4s linear infinite;
-  -o-animation: spin 4s linear infinite;
-  animation: spin 4s linear infinite; }
+  -webkit-animation: spin 12s linear infinite;
+  -ms-animation: spin 12s linear infinite;
+  -moz-animation: spin 12s linear infinite;
+  -o-animation: spin 12s linear infinite;
+  animation: spin 12s linear infinite; }
 
 .tv-side {
   width: inherit;
