@@ -21,19 +21,50 @@ $outline: darken($tv-color-base, 35%);
   #{$name}: #{$argument};
 }
 
-@-moz-keyframes spin { 100% { -moz-transform:  rotateX(-5deg) rotateY(45deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform:  rotateX(-5deg) rotateY(45deg); } }
-@keyframes spin { 100% { -webkit-transform:  rotateX(-5deg) rotateY(45deg); transform: rotateX(-5deg) rotateY(45deg); } }
+$x: -10px;
+$y: 20px;
+
+$x-deg: -10deg;
+$y-deg: 20deg;
+
+// @-moz-keyframes spin {
+// 	0% 		{ -moz-transform:  rotateX($x) rotateY(-$y) }
+// 	50% 	{ -moz-transform:  rotateX($x) rotateY($y) }
+// 	100% 	{ -moz-transform:  rotateX($x) rotateY(-$y) }
+// }
+// @-webkit-keyframes spin {
+// 	0% 		{ -webkit-transform:  rotateX($x) rotateY(-$y); }
+// 	50% 	{ -webkit-transform:  rotateX($x) rotateY($y); }
+// 	100% 	{ -webkit-transform:  rotateX($x) rotateY(-$y); }
+// }
+// @keyframes spin {
+// 	0%   { -webkit-transform: rotateX($x) rotateY(-$y);
+// 				   transform: rotateX($x) rotateY(-$y); }
+// 	50%  { -webkit-transform: rotateX($x) rotateY($y);
+// 				   transform: rotateX($x) rotateY($y); }
+// 	100% { -webkit-transform: rotateX($x) rotateY(-$y);
+// 				   transform: rotateX($x) rotateY(-$y); }
+// }
+
+@-webkit-keyframes hover {
+	0% 		{ -webkit-transform:  rotateX($x-deg) rotateY($y-deg) translateY(-$y); }
+	50% 	{ -webkit-transform:  rotateX(-$x-deg/2) rotateY($y-deg) translateY($y); }
+	100% 	{ -webkit-transform:  rotateX($x-deg) rotateY($y-deg) translateY(-$y); }
+}
 
 #tv-scene {
-	margin: 0 auto;
-	padding-top: 20%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 	width: $size;
 	height: $size;
 	@include vendor-prefix(perspective, 2000px);
 	// background-color: brown;
 
-	// @include vendor-prefix(transform, scale(1.75));
+	// @include vendor-prefix(transform, scale(1.5));
 }
 
 #tv {
@@ -46,8 +77,8 @@ $outline: darken($tv-color-base, 35%);
 	
 	// @include vendor-prefix(transform, rotateX(15deg) rotateY(15deg));
 	
-	@include vendor-prefix(transform, rotateX(-5deg) rotateY(-45deg));
-	@include vendor-prefix(animation, spin 12s linear infinite);
+	@include vendor-prefix(transform, rotateX($x-deg) rotateY(-$y-deg));
+	// @include vendor-prefix(animation, hover 4s ease-in-out infinite);
 }
 .tv-side {
 	width: inherit;

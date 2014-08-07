@@ -32,12 +32,16 @@
  *  font-size: 16px;
  *  text-align: right;
  */
+/* Colors */
 /* Mixins */
 html, body {
   height: 100%; }
 
+h1, h2, h3 {
+  font-family: "Gloria Hallelujah", cursive; }
+
 body {
-  background-color: #222; }
+  background-color: #c97a81; }
 
 #content {
   height: 100%;
@@ -48,7 +52,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  opacity: 0.25; }
   #content .quote-heading {
     position: fixed;
     z-index: 10;
@@ -70,6 +75,15 @@ body {
     -webkit-box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25); }
+
+.main-heading {
+  font-size: 36px;
+  color: white;
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  top: 2.5%;
+  padding-left: 2.5%; }
 
 .animation-target {
   -webkit-animation: animation 1200ms linear both;
@@ -375,19 +389,22 @@ body {
 /* Colors */
 /* TV Variables */
 /* Mixins */
-@-moz-keyframes spin {
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: rotateX(-10deg) rotateY(20deg) translateY(-20px); }
+
+  50% {
+    -webkit-transform: rotateX(5deg) rotateY(20deg) translateY(20px); }
+
   100% {
-    -moz-transform: rotateX(-5deg) rotateY(45deg); } }
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotateX(-5deg) rotateY(45deg); } }
-@keyframes spin {
-  100% {
-    -webkit-transform: rotateX(-5deg) rotateY(45deg);
-    transform: rotateX(-5deg) rotateY(45deg); } }
+    -webkit-transform: rotateX(-10deg) rotateY(20deg) translateY(-20px); } }
 #tv-scene {
-  margin: 0 auto;
-  padding-top: 20%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 300px;
   height: 300px;
   -webkit-perspective: 2000px;
@@ -407,16 +424,11 @@ body {
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform: rotateX(-5deg) rotateY(-45deg);
-  -ms-transform: rotateX(-5deg) rotateY(-45deg);
-  -moz-transform: rotateX(-5deg) rotateY(-45deg);
-  -o-transform: rotateX(-5deg) rotateY(-45deg);
-  transform: rotateX(-5deg) rotateY(-45deg);
-  -webkit-animation: spin 12s linear infinite;
-  -ms-animation: spin 12s linear infinite;
-  -moz-animation: spin 12s linear infinite;
-  -o-animation: spin 12s linear infinite;
-  animation: spin 12s linear infinite; }
+  -webkit-transform: rotateX(-10deg) rotateY(-20deg);
+  -ms-transform: rotateX(-10deg) rotateY(-20deg);
+  -moz-transform: rotateX(-10deg) rotateY(-20deg);
+  -o-transform: rotateX(-10deg) rotateY(-20deg);
+  transform: rotateX(-10deg) rotateY(-20deg); }
 
 .tv-side {
   width: inherit;
