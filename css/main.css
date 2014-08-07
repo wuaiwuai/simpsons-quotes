@@ -735,14 +735,14 @@ body {
       left: 0;
       right: 0;
       margin: auto;
-      height: 120px;
-      width: 4px;
-      background-color: #211931;
+      width: 20px;
       -webkit-transform-origin: 0% 100%;
       -ms-transform-origin: 0% 100%;
       -moz-transform-origin: 0% 100%;
       -o-transform-origin: 0% 100%;
       transform-origin: 0% 100%; }
+      .tv-side.cable-box .cable-box-side.top .antenna object {
+        max-height: 100%; }
       .tv-side.cable-box .cable-box-side.top .antenna:after {
         content: '';
         width: 14px;
@@ -759,17 +759,19 @@ body {
         -moz-border-radius: 20px;
         border-radius: 20px; }
       .tv-side.cable-box .cable-box-side.top .antenna:nth-child(1) {
-        -webkit-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -76px);
-        -ms-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -76px);
-        -moz-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -76px);
-        -o-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -76px);
-        transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -76px); }
+        height: 150px;
+        -webkit-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -106px);
+        -ms-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -106px);
+        -moz-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -106px);
+        -o-transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -106px);
+        transform: rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -106px); }
       .tv-side.cable-box .cable-box-side.top .antenna:nth-child(2) {
-        -webkit-transform: rotateX(-90deg) rotate(45deg) translate3d(0, -2px, -76px);
-        -ms-transform: rotateX(-90deg) rotate(45deg) translate3d(0, -2px, -76px);
-        -moz-transform: rotateX(-90deg) rotate(45deg) translate3d(0, -2px, -76px);
-        -o-transform: rotateX(-90deg) rotate(45deg) translate3d(0, -2px, -76px);
-        transform: rotateX(-90deg) rotate(45deg) translate3d(0, -2px, -76px); }
+        height: 150px;
+        -webkit-transform: rotateX(-90deg) rotate(35deg) translate3d(0, -2px, -106px);
+        -ms-transform: rotateX(-90deg) rotate(35deg) translate3d(0, -2px, -106px);
+        -moz-transform: rotateX(-90deg) rotate(35deg) translate3d(0, -2px, -106px);
+        -o-transform: rotateX(-90deg) rotate(35deg) translate3d(0, -2px, -106px);
+        transform: rotateX(-90deg) rotate(35deg) translate3d(0, -2px, -106px); }
     .tv-side.cable-box .cable-box-side.top .antenna-base {
       position: absolute;
       left: 20%;

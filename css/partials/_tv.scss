@@ -276,10 +276,11 @@ $cable-box-height: 30px;
 			left: 0;
 			right: 0;
 			margin: auto;
-			height: $cable-box-height*4;
-			width: 4px;
-			background-color: $outline;
+			width: 20px;
 			@include vendor-prefix(transform-origin, 0% 100%);
+			object {
+				max-height: 100%;
+			}
 			&:after {
 					content: '';
 					width: 14px;
@@ -295,10 +296,12 @@ $cable-box-height: 30px;
 					@include border-radius(20px);
 				}
 			&:nth-child(1) {
-				@include vendor-prefix(transform, rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -76px));
+				height: $cable-box-height*5;
+				@include vendor-prefix(transform, rotateX(-90deg) rotate(-45deg) translate3d(0, -2px, -106px));
 			}
 			&:nth-child(2) {
-				@include vendor-prefix(transform, rotateX(-90deg) rotate(45deg) translate3d(0, -2px, -76px));
+				height: $cable-box-height*5;
+				@include vendor-prefix(transform, rotateX(-90deg) rotate(35deg) translate3d(0, -2px, -106px));
 			}
 		}
 		.antenna-base {
