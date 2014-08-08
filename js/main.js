@@ -72,12 +72,10 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 
 	// On page load, if there is no hash url (landed directly on homepage), call render() to set random item
 	if(!window.location.hash){
-		console.log('no hash')
 		render()
 	}
 	// Otherwise call renderThis() to load the item corresponding to the url
 	else{
-		console.log('hash')
 		renderThis()
 	}
 
