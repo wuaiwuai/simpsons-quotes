@@ -42,12 +42,6 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 
 	var currentItem = Math.floor(Math.random() * items.length)
 
-<<<<<<< HEAD
-	var template = $('#quoteTemplate').html();
-	// $('#content').html(_.template(template, {data:items[currentItem]}));
-	// $('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
-	$('#tv .screen').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
-=======
 	// Populating template/setting background is moved into render function
 	function render(){
 		var template = $('#quoteTemplate').html();
@@ -86,8 +80,6 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 	}
 
 	addEventListener('hashchange', renderThis())
-	
->>>>>>> upstream/master
 
 	// triggerQuote()
 	// triggerTv()
