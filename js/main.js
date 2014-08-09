@@ -42,10 +42,52 @@ $.getJSON('https://spreadsheets.google.com/feeds/list/1Npd5zyYGyIrVFUKiKHEwyEfLl
 
 	var currentItem = Math.floor(Math.random() * items.length)
 
+<<<<<<< HEAD
 	var template = $('#quoteTemplate').html();
 	// $('#content').html(_.template(template, {data:items[currentItem]}));
 	// $('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
 	$('#tv .screen').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
+=======
+	// Populating template/setting background is moved into render function
+	function render(){
+		var template = $('#quoteTemplate').html();
+		$('#content').html(_.template(template, {data:items[currentItem]}));
+		// $('#content').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
+		$('#tv .screen').css('background-image','url(img/' + items[currentItem]["bg-img"] + ')')
+		window.location.hash = items[currentItem].slug
+	}
+
+	// renderThis function detects current url and updates it to match currentItem
+	function renderThis(){
+
+		// If the url does not match the current item's slug
+		if(window.location.hash != '#' + items[currentItem].slug){
+
+			// Loop through all items til we find the one with corresponding slug
+			for (var i = 0, j = items.length; i < j; i++) {
+				if('#' + items[i].slug == window.location.hash){
+
+					// Set new current item and render again
+					currentItem = i
+					render()
+					return
+				}
+			}
+		}
+	}
+
+	// On page load, if there is no hash url (landed directly on homepage), call render() to set random item
+	if(!window.location.hash){
+		render()
+	}
+	// Otherwise call renderThis() to load the item corresponding to the url
+	else{
+		renderThis()
+	}
+
+	addEventListener('hashchange', renderThis())
+	
+>>>>>>> upstream/master
 
 	// triggerQuote()
 	// triggerTv()
